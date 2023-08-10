@@ -1,12 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convo TCP SERVER</title>
+    <title>Network project</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
+
 <body>
-    <h1>Hello, THE SERVER IS UP AND RUNNING ........... </h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, minus maiores. Qui sapiente mollitia velit optio repudiandae voluptates quas amet, nostrum aspernatur aliquam eius molestias facilis inventore id magnam ullam nisi neque obcaecati ipsa aperiam asperiores exercitationem dolores laboriosam sed.</p>
+
+    <div class="wrapper">
+        <div id="conversation1">
+            <!-- first convo -->
+            <div class="convo con1">
+                <img src="img/wolf-62898_640.jpg" class="profile_pic" alt="">
+                <div class="convouser1">
+
+                    <p>Hello,r u free to play a game?</p>
+                </div>
+            </div>
+            <!-- second convo -->
+            <div class="convo2 con2">
+                <div class="convouser2">
+                    <p>duh!!, what do u have in mind?</p>
+                </div>
+                <img src="img/giraffe-1124451_640.jpg" class="profile_pic" alt="">
+            </div>
+            <!-- third convo -->
+            <div class="convo con3">
+                <img src="img/wolf-62898_640.jpg" class="profile_pic" alt="">
+                <div class="convouser1">
+
+                    <p>Let's play this game,
+                        <button id="playBtn" onclick="showXOGame()">Tic Tac Toe</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="conversation2">
+            <!-- fourth convo -->
+            <div class="convo2 con4">
+                <div class="convouser2">
+                    <p>how about this one?
+                        <button id="playBtn2" onclick="showMatchingCardsGame()">Matching cards</button>
+                    </p>
+                </div>
+                <img src="img/giraffe-1124451_640.jpg" class="profile_pic" alt="">
+            </div>
+        </div>
+        <div id="game1Container">
+            <p id="ins">Game starts by just Tap on
+                box <br> First Player starts as
+                <b>Player X</b> <br> and,Second
+                Player as <b>Player 0</b>
+            </p>
+            <!-- 3*3 grid of Boxes -->
+            <input type="text" id="b1" onclick="handleMove(0)" readonly>
+            <input type="text" id="b2" onclick="handleMove(1)" readonly>
+            <input type="text" id="b3" onclick="handleMove(2)" readonly>
+            <br><br>
+            <input type="text" id="b4" onclick="handleMove(3)" readonly>
+            <input type="text" id="b5" onclick="handleMove(4)" readonly>
+            <input type="text" id="b6" onclick="handleMove(5)" readonly>
+            <br><br>
+            <input type="text" id="b7" onclick="handleMove(6)" readonly>
+            <input type="text" id="b8" onclick="handleMove(7)" readonly>
+            <input type="text" id="b9" onclick="handleMove(8)" readonly>
+
+            <!-- Grid end here  -->
+            <br><br>
+            <!-- Button to reset game -->
+            <button id="but" onclick="resetGame()">
+                <span class="material-symbols-outlined">
+                    restart_alt
+                    </span>
+            </button>
+            <button class="homeBtn" onclick="goToHomePage()"><span
+                    class="material-symbols-outlined">home</span>
+                </button>
+            <br>
+            <!-- Space to show player turn -->
+            <p id="print"></p>
+        </div>
+        
+        <!-- game 2 -->
+        <div id="game2Container">
+            <div class="grid-container">
+            </div>
+            
+            <div class="actions">
+                <p>Score: <span class="score"> </span> </p>
+                <button onclick="restart()">
+                    <span class="material-symbols-outlined">
+                    restart_alt
+                    </span></button>
+                     <button class="homeBtn" onclick="goToHomePage()"><span
+                    class="material-symbols-outlined">home</span></button>
+            </div>
+           
+
+        </div>
+    </div>
+    <!-- the JS code -->
+    <script src="main.js"></script>
 </body>
+
 </html>
